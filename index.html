@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GTA VI Countdown</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:#050510;
+    overflow:hidden;
+}
+
+.glow1,.glow2,.glow3{
+    position:absolute;
+    border-radius:50%;
+    filter:blur(80px);
+}
+
+.glow1{
+    width:250px;
+    height:250px;
+    background:#ff66ff;
+    top:-50px;
+    left:-50px;
+}
+
+.glow2{
+    width:300px;
+    height:300px;
+    background:#7a00ff;
+    bottom:-80px;
+    right:-80px;
+}
+
+.glow3{
+    width:200px;
+    height:200px;
+    background:#ffffff55;
+    top:15%;
+    right:10%;
+}
+
+.container{
+    width:90%;
+    max-width:900px;
+    background:rgba(30,0,60,.75);
+    backdrop-filter:blur(10px);
+    border-radius:30px;
+    padding:40px;
+    text-align:center;
+    border:1px solid rgba(255,255,255,.1);
+    box-shadow:0 0 40px rgba(128,0,255,.3);
+}
+
+h1{
+    color:white;
+    font-size:3rem;
+    margin-bottom:35px;
+}
+
+.countdown{
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+.card{
+    width:160px;
+    height:190px;
+    background:linear-gradient(
+        145deg,
+        #7d1a8d,
+        #4f0f66
+    );
+    border-radius:18px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    box-shadow:
+        0 15px 25px rgba(0,0,0,.4),
+        inset 0 0 20px rgba(255,255,255,.08);
+}
+
+.number{
+    color:white;
+    font-size:4rem;
+    font-weight:bold;
+}
+
+.label{
+    color:white;
+    opacity:.9;
+    font-size:1.2rem;
+    margin-top:10px;
+}
+
+.footer{
+    color:white;
+    opacity:.6;
+    margin-top:25px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="glow1"></div>
+<div class="glow2"></div>
+<div class="glow3"></div>
+
+<div class="container">
+
+    <h1>GTA VI EN:</h1>
+
+    <div class="countdown">
+
+        <div class="card">
+            <div id="months" class="number">00</div>
+            <div class="label">Months</div>
+        </div>
+
+        <div class="card">
+            <div id="days" class="number">00</div>
+            <div class="label">Days</div>
+        </div>
+
+        <div class="card">
+            <div id="hours" class="number">00</div>
+            <div class="label">Hours</div>
+        </div>
+
+        <div class="card">
+            <div id="minutes" class="number">00</div>
+            <div class="label">Minutes</div>
+        </div>
+
+    </div>
+
+    <div class="footer">
+        Countdown to GTA VI
+    </div>
+
+</div>
+
+<script>
+
+const targetDate = new Date("2026-11-19T00:00:00");
+
+function updateCountdown(){
+
+    const now = new Date();
+
+    let months =
+        (targetDate.getFullYear()-now.getFullYear())*12 +
+        (targetDate.getMonth()-now.getMonth());
+
+    let days = targetDate.getDate()-now.getDate();
+
+    if(days < 0){
+        months--;
+        const previousMonth =
+            new Date(
+                targetDate.getFullYear(),
+                targetDate.getMonth(),
+                0
+            ).getDate();
+
+        days += previousMonth;
+    }
+
+    const diff = targetDate - now;
+
+    const hours =
+        Math.floor(diff/(1000*60*60)) % 24;
+
+    const minutes =
+        Math.floor(diff/(1000*60)) % 60;
+
+    document.getElementById("months").textContent =
+        String(months).padStart(2,"0");
+
+    document.getElementById("days").textContent =
+        String(days).padStart(2,"0");
+
+    document.getElementById("hours").textContent =
+        String(hours).padStart(2,"0");
+
+    document.getElementById("minutes").textContent =
+        String(minutes).padStart(2,"0");
+}
+
+updateCountdown();
+setInterval(updateCountdown,1000);
+
+</script>
+
+</body>
+</html>

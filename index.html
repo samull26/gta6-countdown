@@ -19,7 +19,7 @@ body{
     justify-content:center;
     align-items:center;
     background:#050510;
-    overflow-y:auto;
+    overflow:hidden;
 }
 
 .glow1,.glow2,.glow3{
@@ -75,11 +75,14 @@ h1{
     justify-content:center;
     gap:20px;
     flex-wrap:wrap;
+
+    max-height:none;
+    overflow:visible;
 }
 
 .card{
-    width:160px;
-    height:190px;
+    width:120px;
+    height:140px;
     background:linear-gradient(
         145deg,
         #7d1a8d,
@@ -97,7 +100,7 @@ h1{
 
 .number{
     color:white;
-    font-size:4rem;
+    font-size:3rem;
     font-weight:bold;
 }
 

@@ -147,6 +147,11 @@ h1{
             <div id="minutes" class="number">00</div>
             <div class="label">Minutes</div>
         </div>
+        
+        <div class="card">
+            <div id="seconds" class="number">00</div>
+            <div class="label">Seconds</div>
+        </div>
 
     </div>
 
@@ -189,6 +194,9 @@ function updateCountdown(){
 
     const minutes =
         Math.floor(diff/(1000*60)) % 60;
+    
+    const seconds =
+        Math.floor(diff/1000) % 60;
 
     document.getElementById("months").textContent =
         String(months).padStart(2,"0");
@@ -201,6 +209,9 @@ function updateCountdown(){
 
     document.getElementById("minutes").textContent =
         String(minutes).padStart(2,"0");
+
+    document.getElementById("seconds").textContent =
+        String(seconds).padStart(2,"0");
 }
 
 updateCountdown();

@@ -75,6 +75,30 @@ body{
     right:10%;
 }
 
+.sun{
+    position:absolute;
+    width:500px;
+    height:500px;
+
+    border-radius:50%;
+
+    background:
+    radial-gradient(
+        circle,
+        #ffb347 0%,
+        #ff5ca8 60%,
+        transparent 100%
+    );
+
+    top:80px;
+    left:50%;
+
+    transform:translateX(-50%);
+
+    opacity:.35;
+    z-index:0;
+}
+
 .container{
     width:90%;
     max-width:900px;
@@ -159,6 +183,8 @@ h1{
 <div class="glow1"></div>
 <div class="glow2"></div>
 <div class="glow3"></div>
+
+    <div class="sun"></div>
 
     <div class="container">
 

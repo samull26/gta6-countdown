@@ -115,6 +115,26 @@ h1{
     color:white;
     font-size:3rem;
     margin-bottom:35px;
+
+    text-shadow:
+      0 0 10px #ff5ca8,
+      0 0 20px #d96bff;
+
+    animation:glow 3s infinite alternate;
+}
+
+@keyframes glow{
+    from{
+      text-shadow:
+        0 0 10px #ff5ca8,
+        0 0 20px #d96bff;
+    }
+
+to{
+   text-shadow:
+     0 0 20px #ff5ca8,
+     0 0 40px #d96bff;
+     }
 }
 
 .countdown{

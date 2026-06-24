@@ -117,6 +117,46 @@ body{
     bottom:960px;
 }
 
+.sparkle{
+    position:absolute;
+    width:8px;
+    height:8px;
+    background:white;
+    border-radius:50%;
+
+    box-shadow:
+        0 0 10px white,
+        0 0 20px white;
+
+    opacity:.7;
+    
+    animation:twinkle 3s infinite;
+    }
+
+.sparkle1{
+    top:120px;
+    left:20%;
+}
+
+.sparkle2{
+    top:200px;
+    right:25%;
+}
+
+.sparkle3{
+    top:350px;
+    left:75%;
+}
+
+@keyframes twinkle{
+    0%,100%{
+        opacity:.2;
+    }
+    50%{
+        opacity:.8;
+    }
+}
+
 .container{
     width:90%;
     max-width:900px;
@@ -267,6 +307,10 @@ to{
 
     <div class="palm palm-left">🌴</div>
     <div class="palm palm-right">🌴</div>
+
+    <div class="sparkle sparkle1"></div>
+    <div class="sparkle sparkle2"></div>
+    <div class="sparkle sparkle3"></div>
 
     <div class="container">
 

@@ -197,23 +197,26 @@ h1{
     margin-bottom:35px;
 
     text-shadow:
-      0 0 10px #ff5ca8,
-      0 0 20px #d96bff;
+        0 0 10px rgba(255,255,255,.8),
+        0 0 20px rgba(255,255,255,.6),
+        0 0 40px rgba(255,150,255,.4);
 
-    animation:glow 3s infinite alternate;
+    animation:titleGlow 4s ease-in-out infinite;
 }
 
-@keyframes glow{
-    from{
+@keyframes titleGlow{
+    0%,100%{
       text-shadow:
-        0 0 10px #ff5ca8,
-        0 0 20px #d96bff;
+         0 0 10px rgba(255,255,255,.8),
+         0 0 20px rgba(255,255,255,.6),
+         0 0 40px rgba(255,150,255,.4);
     }
 
-to{
+50%{
    text-shadow:
-     0 0 20px #ff5ca8,
-     0 0 40px #d96bff;
+         0 0 15px rgba(255,255,255,1),
+         0 0 30px rgba(255,180,255,.8),
+         0 0 60px rgba(255,120,255,.5);
      }
 }
 

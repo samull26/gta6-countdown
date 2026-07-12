@@ -387,7 +387,7 @@ h1{
 
     <div class="container">
 
-    <h1>GTA VI EN:</h1>
+    <h1 id="title">GTA VI EN:</h1>
 
     <div class="countdown">
 
@@ -483,6 +483,28 @@ function updateCountdown(){
 
 updateCountdown();
 setInterval(updateCountdown,1000);
+
+    // ===== Easter Egg Rickroll =====
+
+let titleClicks = 0;
+
+const title = document.getElementById("title");
+
+title.addEventListener("click", () => {
+
+    titleClicks++;
+
+    if(titleClicks >= 10){
+
+        alert("🎉 ¡Easter Egg desbloqueado!");
+
+        window.location.href =
+        "https://youtu.be/dQw4w9WgXcQ";
+
+        titleClicks = 0;
+    }
+
+});
 
 </script>
 
